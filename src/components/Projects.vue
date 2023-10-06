@@ -17,7 +17,7 @@
   </template>
   
   <script>
-  import Project from './project.vue'
+  import Project from './Project.vue'
   
   export default {
     components: {
