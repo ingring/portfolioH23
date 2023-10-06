@@ -8,7 +8,7 @@ import Smiley from '../components/Smiley.vue'
 <template>
   <HeroSection />
   <Smiley />
-  <main class="flex justify-center flex-col">
+  <main class="flex justify-center flex-col overflow-hidden relative">
     <Projects />
   </main>
   <FooterComp />

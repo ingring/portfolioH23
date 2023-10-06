@@ -1,6 +1,6 @@
 <template>
-    <footer class="max-w-[280px] my-[20px] mx-auto border-t-2 border-yellow">
-        <div class=" py-[20px] flex justify-around">
+    <footer class="max-w-[280px] md:max-w-[30vw] my-[20px] mx-auto border-t-2 border-yellow">
+        <div class=" py-[40px] flex justify-around">
             <a href="https://github.com/ingring" target="blank" class="text-white hover:opacity-50">
             <i class="devicon-github-original text-2xl block text-center"></i>                
             GitHub
@@ -18,7 +18,9 @@
                 Mail
             </a>
         </div>
-        <!-- <p class="text-center pb-[20px] inline">Don't hesitate to take contact!</p>
-        <img src="/smileyYellow.png" class="w-5 h-5 ml-2 inline" alt=""> -->
+        <!-- <div class="mx-auto py-5">
+            <p class="text-center pb-[20px] inline">Don't hesitate to take contact!</p>
+            <img src="/smileyYellow.png" class="w-5 h-5 ml-2 inline" alt="">
+        </div> -->
     </footer>
 </template>
