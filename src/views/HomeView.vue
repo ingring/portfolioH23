@@ -1,6 +1,6 @@
 <script setup>
 import HeroSection from '../components/HeroSection.vue'
-import Projects from '../components/projects.vue'
+import Projects from '../components/Projects.vue'
 import FooterComp from '../components/FooterComp.vue'
 import Smiley from '../components/Smiley.vue'
 </script>
