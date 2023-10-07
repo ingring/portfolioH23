@@ -7,7 +7,7 @@
           v-for="project in projects"
           :key="project._id"
           :name="project.name"
-          :descriptionText="project.descriptionText"
+          :description="project.description"
           :imgUrlMockupPhone="project.imgUrlMockupPhone"
           :imgUrlMockupDesktop="project.imgUrlMockupDesktop"
           :technologies="project.technologies"
@@ -31,7 +31,7 @@
       };
     },
     mounted() {
-      this.$sanityClient.fetch('*[_type == "project"]{name, "descriptionText": description[0].children[0].text, "imgUrlMockupPhone":mockupPhone.asset._ref, "imgUrlMockupDesktop":mockupDesktop.asset._ref, "technologies":technology[]->{name, "img":img.asset._ref, "imgTag":description[0].children[0].text}, gitProjectUrl, liveWebsiteUrl}').then((data) => {
+      this.$sanityClient.fetch('*[_type == "project"]{name, description, "imgUrlMockupPhone":mockupPhone.asset._ref, "imgUrlMockupDesktop":mockupDesktop.asset._ref, "technologies":technology[]->{name, "img":img.asset._ref, "imgTag":description[0].children[0].text}, gitProjectUrl, liveWebsiteUrl}').then((data) => {
         console.log(data)
         this.projects = data;
       });

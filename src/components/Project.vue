@@ -18,7 +18,7 @@
       </div>
       <div class="max-w-prose m-5 lg:w-1/2 md:ml-[16rem]">
         <h3 class="font-bold">{{ name }}</h3>
-        <p class="">{{ descriptionText }}</p>
+        <p class="">{{ description }}</p>
         <div class="pt-5">
           <p class="font-bold">Made with</p>
           <div class="flex flex-wrap gap-2">
@@ -38,7 +38,7 @@
     export default {
     props: {
         name: String,
-        descriptionText: String,
+        description: String,
         imgUrlMockupPhone: String,
         imgUrlMockupDesktop: String,
         imgTitle: String,
