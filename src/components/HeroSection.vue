@@ -1,7 +1,7 @@
 <template>
     <div class="flex justify-center h-screen items-center bg-yellow md:bg-gradient-to-r md:from-yellow md:to-red text-black overflow-hidden relative jump">
         <div class="flex flex-col m-5 md:m-6">
-            <p class="text-3xl md:text-5xl lg:text-6xl">Hi, I'm Ingrid</p>
+            <p class="text-4xl md:text-6xl lg:text-7xl">Hi, I'm Ingrid Nes</p>
             <h1 class="text-7xl md:text-[12rem] lg:text-[16rem] flex">Gladhe        
                 <div class="relative">
                     <span class="text-7xl md:text-[12rem] lg:text-[16rem]">i</span>

@@ -8,11 +8,11 @@
         <div class="my-5">
           <!-- <p class="font-bold">Check out</p> -->
           <div class="flex gap-5 font-bold">
-            <p class="hover:opacity-50"><a v-if="liveSite" :href=liveSite>Live site</a> </p>
-            <p else data-te-toggle="tooltip" title="Not available yet" class="hover:opacity-50">Live site</p>
+            <p v-if="liveSite" class="hover:opacity-50"><a :href=liveSite target="_blank">Live site</a> </p>
+            <p v-else data-te-toggle="tooltip" title="Not available yet" class="hover:opacity-50">Live site</p>
             <p class="text-yellow">|</p>
-            <p class="hover:opacity-50"><a v-if="liveSite" :href="liveSite">GitHub</a></p>
-            <p else data-te-toggle="tooltip" title="Not available yet" class="hover:opacity-50">GitHub</p>
+            <p v-if="gitHub" class="hover:opacity-50"><a :href="gitHub" target="_blank">GitHub</a></p>
+            <p v-else data-te-toggle="tooltip" title="Not available yet" class="hover:opacity-50">GitHub</p>
           </div>
         </div>
       </div>
@@ -21,7 +21,7 @@
         <p class="">{{ descriptionText }}</p>
         <div class="pt-5">
           <p class="font-bold">Made with</p>
-          <div class="flex flex-wrap">
+          <div class="flex flex-wrap gap-2">
             <div v-for="technology in technologies" class="p-3 text-center">
               <i :class=technology.imgTag class="md:text-3xl text-2xl"> </i>
               <p>{{ technology.name }}</p>
@@ -42,7 +42,9 @@
         imgUrlMockupPhone: String,
         imgUrlMockupDesktop: String,
         imgTitle: String,
-        technologies: Array
+        technologies: Array,
+        gitHub: String,
+        liveSite: String
     },
     data() {
     return {

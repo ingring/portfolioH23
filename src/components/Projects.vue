@@ -11,6 +11,8 @@
           :imgUrlMockupPhone="project.imgUrlMockupPhone"
           :imgUrlMockupDesktop="project.imgUrlMockupDesktop"
           :technologies="project.technologies"
+          :gitHub="project.gitProjectUrl"
+          :liveSite="project.liveWebsiteUrl"
         />
       </div>
     </div>
@@ -29,7 +31,7 @@
       };
     },
     mounted() {
-      this.$sanityClient.fetch('*[_type == "project"]{name, "descriptionText": description[0].children[0].text, "imgUrlMockupPhone":mockupPhone.asset._ref, "imgUrlMockupDesktop":mockupDesktop.asset._ref, "technologies":technology[]->{name, "img":img.asset._ref, "imgTag":description[0].children[0].text}}').then((data) => {
+      this.$sanityClient.fetch('*[_type == "project"]{name, "descriptionText": description[0].children[0].text, "imgUrlMockupPhone":mockupPhone.asset._ref, "imgUrlMockupDesktop":mockupDesktop.asset._ref, "technologies":technology[]->{name, "img":img.asset._ref, "imgTag":description[0].children[0].text}, gitProjectUrl, liveWebsiteUrl}').then((data) => {
         console.log(data)
         this.projects = data;
       });
