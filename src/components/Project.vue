@@ -9,10 +9,10 @@
           <!-- <p class="font-bold">Check out</p> -->
           <div class="flex gap-5 font-bold">
             <p v-if="liveSite" class="hover:opacity-50"><a :href=liveSite target="_blank">Live site</a> </p>
-            <p v-else data-te-toggle="tooltip" title="Not available yet" class="hover:opacity-50">Live site</p>
+            <p v-else data-te-toggle="tooltip" title="Not available yet">Live site</p>
             <p class="text-yellow">|</p>
             <p v-if="gitHub" class="hover:opacity-50"><a :href="gitHub" target="_blank">GitHub</a></p>
-            <p v-else data-te-toggle="tooltip" title="Not available yet" class="hover:opacity-50">GitHub</p>
+            <p v-else data-te-toggle="tooltip" title="Not available yet">GitHub</p>
           </div>
         </div>
       </div>
