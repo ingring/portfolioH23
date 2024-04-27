@@ -1,5 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import { onMounted } from "vue";
+import { Tooltip, initTWE } from "tw-elements";
 </script>
 
 <template>
@@ -22,3 +24,14 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <style scoped>
 </style>
+
+<script>
+export default {
+  mounted() {
+    // Initialize tw-elements
+    onMounted(() => {
+      initTWE({ Tooltip });
+    });
+  }
+}
+</script>

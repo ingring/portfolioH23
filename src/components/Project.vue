@@ -1,23 +1,104 @@
+<script setup>
+  import { Undo } from 'lucide-vue-next';
+
+/*   import { onMounted } from "vue";
+    import { Ripple, Tooltip, initTWE } from "tw-elements";
+
+    onMounted(() => {
+        initTWE({ Tooltip });
+    }); */
+</script>
+
 <template>
-    <div class="flex flex-col md:flex-row justify-center md:gap-4 m-5 mt-10 py-5">
-      <div>
-        <div class="relative w-fit m-5 md:m-0">
+    <div class="flex flex-col lg:flex-row lg:justify-between lg:gap-10 my-10 pb-10 w-full ">
+      <div class="lg:w-1/2 lg:relative my-auto">
+        <div v-if="index === 0 || (index % 2 === 0)" class="hidden lg:block lg:-top-10 lg:-left-5 lg:absolute lg:-rotate-12">
+          <p class="inline-block pr-2">Hover</p><Undo class="transform scale-x-[-1] rotate-45 inline-block" color="#F2C94C"/>
+        </div>
+
+        <div class="w-fit md:m-0 relative">
           <img :src="urlFor(imgUrlMockupPhone).width(200).url()" class="max-w-[5rem] md:max-w-[10rem] hover:shadowSvg" @mouseover="setZIndex(true)" @mouseout="setZIndex(false)" />
           <img :src="urlFor(imgUrlMockupDesktop).width(200).url()" class="max-w-[10rem] min-w-[10rem] md:max-w-[20rem] md:min-w-[20rem] absolute bottom-0 left-1/2 hover:shadowSvg" :style="{ 'z-index': zIndex }" />
         </div>
-        <div class="my-5">
+      
+        <div class="my-5 lg:relative w-fit">
           <!-- <p class="font-bold">Check out</p> -->
-          <div class="flex gap-5 font-bold">
-            <p v-if="liveSite" class="hover:opacity-50"><a :href=liveSite target="_blank">Live site</a> </p>
-            <p v-else data-te-toggle="tooltip" title="Not available yet">Live site</p>
+          <div class="flex gap-5">
+            <a v-if="liveSite" 
+              data-twe-toggle="tooltip" 
+              data-twe-ripple-init 
+              data-twe-placement="bottom" 
+              data-twe-ripple-color="dark" 
+              title="Go to the project's live site" 
+              class="hover:opacity-50" 
+              :href="liveSite" 
+              target="_blank">
+              Live site
+            </a> 
+            <a v-else 
+              href="#" 
+              data-twe-toggle="tooltip" 
+              data-twe-ripple-init 
+              data-twe-placement="bottom" 
+              data-twe-ripple-color="dark" 
+              title="Not available yet" 
+              class="hover:opacity-50">
+              Live site
+            </a>
             <p class="text-yellow">|</p>
-            <p v-if="gitHub" class="hover:opacity-50"><a :href="gitHub" target="_blank">GitHub</a></p>
-            <p v-else data-te-toggle="tooltip" title="Not available yet">GitHub</p>
+            <a v-if="gitHub" 
+              data-twe-toggle="tooltip" 
+              data-twe-ripple-init 
+              data-twe-placement="bottom" 
+              data-twe-ripple-color="dark" 
+              title="Go to the GitHub project" 
+              class="hover:opacity-50" 
+              :href="gitHub" 
+              target="_blank">
+              GitHub
+            </a>
+            <a v-else 
+              href="#" 
+              data-twe-toggle="tooltip" 
+              data-twe-ripple-init 
+              data-twe-placement="bottom" 
+              data-twe-ripple-color="dark"  
+              title="Not available yet" 
+              class="hover:opacity-50">
+              GitHub
+            </a>
+            <p class="text-yellow">|</p>
+            <a v-if="process" 
+              data-twe-toggle="tooltip" 
+              data-twe-ripple-init 
+              data-twe-placement="bottom"  
+              title="View my process in this project" 
+              class="hover:opacity-50" 
+              href="/process" 
+              target="_blank">
+              Process
+            </a>
+            <a v-else 
+              href="#" 
+              data-twe-toggle="tooltip" 
+              data-twe-ripple-init 
+              data-twe-placement="bottom" 
+              data-twe-ripple-color="dark"  
+              title="Not available yet" 
+              class="hover:opacity-50">
+              Process
+            </a>
+          </div>
+          <div v-if="index % 2 === 1" class="hidden lg:block lg:-bottom-10 lg:-right-5 lg:absolute lg:-rotate-12">
+            <p class="inline-block pr-2">Check out</p><Undo class="transform -rotate-[245deg] inline-block" color="#F2C94C"/>
           </div>
         </div>
       </div>
-      <div class="max-w-prose m-5 lg:w-1/2 md:ml-[16rem]">
-        <h3 class="font-bold">{{ name }}</h3>
+      <div class="lg:w-1/2 my-auto">
+        <div class="flex items-end justify-between gap-5 flex-wrap max-w-prose">
+          <h3 class="font-bold">{{ name }}</h3>
+          <!-- <p class="text-base">Høst 2023</p> -->
+        </div>
         <p class="">{{ description }}</p>
         <div class="pt-5">
           <p class="font-bold">Made with</p>
@@ -28,12 +109,12 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </div> 
+  </div>
 </template>
   
 <script>
-    import { builder } from '@/main'; // Assuming that main.js is located at src/main.js
+    import { builder } from '@/main'; 
 
     export default {
     props: {
@@ -44,7 +125,8 @@
         imgTitle: String,
         technologies: Array,
         gitHub: String,
-        liveSite: String
+        liveSite: String,
+        index: Number
     },
     data() {
     return {
@@ -60,4 +142,5 @@
         }
     }
     };
+    console.log(name)
 </script>

@@ -1,6 +1,6 @@
 <template>
-    <div class="flex justify-center h-screen items-center bg-yellow md:bg-gradient-to-r md:from-yellow md:to-red text-black overflow-hidden relative jump">
-        <div class="flex flex-col m-5 md:m-6">
+    <div class="flex md:justify-center px-10 py-20 md:p-0 md:items-center bg-yellow md:h-screen md:bg-gradient-to-r md:from-yellow md:to-red text-black overflow-hidden relative md:jump">
+        <div class="flex flex-col md:m-6">
             <p class="text-4xl md:text-6xl lg:text-7xl">Hi, I'm Ingrid Nes</p>
             <h1 class="text-7xl md:text-[12rem] lg:text-[16rem] flex">Gladhe        
                 <div class="relative">
@@ -10,7 +10,7 @@
                 </div>
             m
             </h1>
-            <p class=" py-5 text-2xl md:text-4xl max-w-prose">I'm a <span class="font-bold ">dedicated</span> norwegian NTNU student in <span class="font-bold ">web development</span> who finds <span class="font-bold">joy</span> and a sense of <span class="font-bold">accomplishment</span> in every coding adventures.</p>
+            <p class=" pt-5 text-2xl md:text-4xl max-w-prose">I'm a <span class="font-bold ">dedicated</span> norwegian NTNU student in <span class="font-bold ">web development</span> who finds <span class="font-bold">joy</span> and a sense of <span class="font-bold">accomplishment</span> in every coding adventures.</p>
         </div>
     </div>
 </template>

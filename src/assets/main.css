@@ -12,7 +12,7 @@
     h3 {
         @apply text-2xl;
     }
-    p {
+    p, li, a {
         @apply text-xl;
     }
     body {
@@ -24,6 +24,10 @@
 @layer components {
     .shadowSvg {
         filter: drop-shadow(4px 4px 4px #F2C94C);
+    }
+
+    .shadowSvg-inverted {
+      filter: drop-shadow(-4px -4px 4px #F2C94C); 
     }
 
     @keyframes jump {
