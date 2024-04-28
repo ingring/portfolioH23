@@ -96,7 +96,7 @@
       </div>
       <div class="lg:w-1/2 my-auto">
         <div class="flex items-end justify-between gap-5 flex-wrap max-w-prose">
-          <h3 class="font-bold text-[#F2B14B]">{{ name }}</h3>
+          <h3 class="font-bold">{{ name }}</h3>
           <!-- <p class="text-base">Høst 2023</p> -->
         </div>
         <p class="">{{ description }}</p>

@@ -11,6 +11,7 @@
     }
     h3 {
         @apply text-2xl;
+        @apply text-[#F2B14B];
     }
     p, li, a {
         @apply text-xl;
