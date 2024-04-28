@@ -23,7 +23,7 @@
 
 @layer components {
     .shadowSvg {
-        filter: drop-shadow(4px 4px 4px #F2C94C);
+        filter: drop-shadow(4px 4px 4px #F2B14B);
     }
 
     .shadowSvg-inverted {
