@@ -19,7 +19,7 @@ import { onMounted } from "vue";
   <!-- <HeroSection /> -->
   <!-- <Smiley /> -->
   <!-- <Nav></Nav> -->
-  <main class="relative mx-auto max-w-2xl lg:max-w-7xl p-10">
+  <main class="relative mx-auto max-w-2xl lg:max-w-7xl p-10 p-20">
     <AboutMe />
     <Projects />
   </main>
