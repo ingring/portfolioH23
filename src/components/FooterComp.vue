@@ -12,7 +12,7 @@
 
 <template>
     <footer class="max-w-[280px] md:max-w-[30vw] my-[20px] mx-auto border-t-2 border-[#F2B14B] py-[20px]">
-        <h3>Contact me</h3>
+        <h3 class="text-center">Contact me</h3>
         <div class=" py-[20px] flex justify-around">
         
             <a href="https://github.com/ingring" target="blank" class="text-white hover:opacity-50" data-twe-toggle="tooltip" data-twe-ripple-init data-twe-placement="bottom" data-twe-ripple-color="dark"  title="Explore my GitHub profile">
