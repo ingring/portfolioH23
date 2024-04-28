@@ -4,7 +4,10 @@
 
 <template>
     <div class="my-20 w-full">
-      <h2 class="lg:pb-10">My favorite projects right now</h2>
+      <div class="flex">
+        <h2 class="lg:pb-10 mr-2">My favorite projects right now</h2>
+        <img src="/public/smileyOrange.png" class="w-4 h-4 lg:w-10 lg:h-10 lg:top-7 hover:rotate3D">
+      </div>
       <div>
         <Project
           v-for="(project, index) in projects"

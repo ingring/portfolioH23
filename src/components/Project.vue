@@ -13,7 +13,7 @@
     <div class="flex flex-col lg:flex-row lg:justify-between lg:gap-10 my-10 pb-10 w-full ">
       <div class="lg:w-1/2 lg:relative my-auto">
         <div v-if="index === 0 || (index % 2 === 0)" class="hidden lg:block lg:-top-10 lg:-left-5 lg:absolute lg:-rotate-12">
-          <p class="inline-block pr-2">Hover</p><Undo class="transform scale-x-[-1] rotate-45 inline-block" color="#F2C94C"/>
+          <p class="inline-block pr-2 text-[#F2B14B]">Hover</p><Undo class="transform scale-x-[-1] rotate-45 inline-block" color="#F2B14B"/>
         </div>
 
         <div class="w-fit md:m-0 relative">
@@ -45,7 +45,7 @@
               class="hover:opacity-50">
               Live site
             </a>
-            <p class="text-yellow">|</p>
+            <p class="text-[#F2B14B]">|</p>
             <a v-if="gitHub" 
               data-twe-toggle="tooltip" 
               data-twe-ripple-init 
@@ -67,7 +67,7 @@
               class="hover:opacity-50">
               GitHub
             </a>
-            <p class="text-yellow">|</p>
+            <p class="text-[#F2B14B]">|</p>
             <a v-if="process" 
               data-twe-toggle="tooltip" 
               data-twe-ripple-init 
@@ -90,13 +90,13 @@
             </a>
           </div>
           <div v-if="index % 2 === 1" class="hidden lg:block lg:-bottom-10 lg:-right-5 lg:absolute lg:-rotate-12">
-            <p class="inline-block pr-2">Check out</p><Undo class="transform -rotate-[245deg] inline-block" color="#F2C94C"/>
+            <p class="inline-block pr-2 text-[#F2B14B]">Check out</p><Undo class="transform -rotate-[245deg] inline-block" color="#F2B14B"/>
           </div>
         </div>
       </div>
       <div class="lg:w-1/2 my-auto">
         <div class="flex items-end justify-between gap-5 flex-wrap max-w-prose">
-          <h3 class="font-bold">{{ name }}</h3>
+          <h3 class="font-bold text-[#F2B14B]">{{ name }}</h3>
           <!-- <p class="text-base">Høst 2023</p> -->
         </div>
         <p class="">{{ description }}</p>
