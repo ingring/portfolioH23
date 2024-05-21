@@ -5,6 +5,7 @@ import FooterComp from '../components/FooterComp.vue'
 import Smiley from '../components/Smiley.vue'
 import AboutMe from '../components/AboutMe.vue'
 import Nav from '../components/Nav.vue'
+import Timeline from '../components/Timeline.vue'
 
 import { onMounted } from "vue";
   import { Tooltip, initTWE } from "tw-elements";
@@ -22,6 +23,7 @@ import { onMounted } from "vue";
   <AboutMe />
   <main class="relative mx-auto max-w-2xl lg:max-w-7xl px-10 md:px-20 py-5">
     <Projects />
+    <Timeline />
   </main>
   <FooterComp />
 </template>
@@ -34,7 +36,8 @@ import { onMounted } from "vue";
       FooterComp,
       Smiley,
       AboutMe,
-      Nav
+      Nav,
+      Timeline
     },
   }
 

@@ -8,7 +8,7 @@
         <section class=" my-auto max-w-full lg:w-1/2">
             <h1>Ingrid Gladheim</h1>
             <ul>
-                <li class="flex gap-2 my-4"><BriefcaseBusiness />Front-end developer</li>
+                <!-- <li class="flex gap-2 my-4"><BriefcaseBusiness />Front-end developer at NAV IT</li> -->
                 <li class="flex gap-2 my-4"><GraduationCap/>Bachelor in Web Development at NTNU</li>
                 <li class="flex gap-2 my-4"><MapPin />Located in Oslo, Norway</li>
             </ul>

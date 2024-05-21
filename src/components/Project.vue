@@ -17,9 +17,21 @@
         </div>
 
         <div class="w-fit md:m-0 relative">
-          <img :src="urlFor(imgUrlMockupPhone).width(1080).url()" class="max-w-[5rem] md:max-w-[10rem] hover:shadowSvg" @mouseover="setZIndex(true)" @mouseout="setZIndex(false)" quality={100} />
-          <img :src="urlFor(imgUrlMockupDesktop).width(1920).height(1080).url()" class="max-w-[10rem] min-w-[10rem] md:max-w-[20rem] md:min-w-[20rem] absolute bottom-0 left-1/2 hover:shadowSvg" :style="{ 'z-index': zIndex }" quality={100} />
+          <button onclick="my_modal_2.showModal()">
+            <img :src="urlFor(imgUrlMockupPhone).width(1080).url()" class="max-w-[5rem] md:max-w-[10rem] hover:shadowSvg" @mouseover="setZIndex(true)" @mouseout="setZIndex(false)" quality={100} />
+          </button>
+            <img :src="urlFor(imgUrlMockupDesktop).width(1920).height(1080).url()" class="max-w-[10rem] min-w-[10rem] md:max-w-[20rem] md:min-w-[20rem] absolute bottom-0 left-1/2 hover:shadowSvg" :style="{ 'z-index': zIndex }" quality={100} />
         </div>
+
+        <dialog id="my_modal_2" class="modal">
+          <div class="modal-box">
+            <h3 class="font-bold text-lg">Hello!</h3>
+            <p class="py-4">Press ESC key or click outside to close</p>
+          </div>
+          <form method="dialog" class="modal-backdrop">
+            <button>close</button>
+          </form>
+        </dialog>
       
         <div class="my-5 lg:relative w-fit">
           <!-- <p class="font-bold">Check out</p> -->
