@@ -9,7 +9,7 @@ defineProps({
   <main class="relative mx-auto max-w-2xl lg:max-w-7xl px-10 md:px-20 py-8">
     <div class="flex justify-end">
         <!-- <img src="/public/smileyOrange.png" class="w-7 h-7 hover:rotate3D my-auto inline pb-1.5 pr-1.5"> -->
-        <router-link :to="{ name: 'home'}" class="inline text-orange">Ingrid Gladheim</router-link>
+        <router-link :to="{ name: '/'}" class="inline text-orange">Ingrid Gladheim</router-link>
       </div>
       <GoBackBtn />
     <h1 class="pt-8" v-if="this.project">{{ this.project }}</h1>
