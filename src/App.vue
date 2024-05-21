@@ -18,6 +18,7 @@ import { Tooltip, Ripple, initTWE } from "tw-elements";
   </header> -->
 
   <RouterView />
+  <FooterComp />
 
   </div>
 </template>

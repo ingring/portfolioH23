@@ -1,5 +1,5 @@
 <script setup>
-  import { Undo } from 'lucide-vue-next';
+  import { Undo, Frame } from 'lucide-vue-next';
 
 /*   import { onMounted } from "vue";
     import { Ripple, Tooltip, initTWE } from "tw-elements";
@@ -17,8 +17,8 @@
         </div>
 
         <div class="w-fit md:m-0 relative">
-          <img :src="urlFor(imgUrlMockupPhone).width(200).url()" class="max-w-[5rem] md:max-w-[10rem] hover:shadowSvg" @mouseover="setZIndex(true)" @mouseout="setZIndex(false)" />
-          <img :src="urlFor(imgUrlMockupDesktop).width(200).url()" class="max-w-[10rem] min-w-[10rem] md:max-w-[20rem] md:min-w-[20rem] absolute bottom-0 left-1/2 hover:shadowSvg" :style="{ 'z-index': zIndex }" />
+          <img :src="urlFor(imgUrlMockupPhone).width(1080).url()" class="max-w-[5rem] md:max-w-[10rem] hover:shadowSvg" @mouseover="setZIndex(true)" @mouseout="setZIndex(false)" quality={100} />
+          <img :src="urlFor(imgUrlMockupDesktop).width(1920).height(1080).url()" class="max-w-[10rem] min-w-[10rem] md:max-w-[20rem] md:min-w-[20rem] absolute bottom-0 left-1/2 hover:shadowSvg" :style="{ 'z-index': zIndex }" quality={100} />
         </div>
       
         <div class="my-5 lg:relative w-fit">
@@ -35,7 +35,7 @@
               target="_blank">
               Live site
             </a> 
-            <a v-else 
+            <!-- <a v-else 
               href="#" 
               data-twe-toggle="tooltip" 
               data-twe-ripple-init 
@@ -44,8 +44,8 @@
               title="Not available yet" 
               class="hover:opacity-50">
               Live site
-            </a>
-            <p class="text-[#F2B14B]">|</p>
+            </a> -->
+            <p v-if="gitHub && liveSite" class="text-[#F2B14B]">|</p>
             <a v-if="gitHub" 
               data-twe-toggle="tooltip" 
               data-twe-ripple-init 
@@ -57,7 +57,7 @@
               target="_blank">
               GitHub
             </a>
-            <a v-else 
+<!--             <a v-else 
               href="#" 
               data-twe-toggle="tooltip" 
               data-twe-ripple-init 
@@ -66,9 +66,9 @@
               title="Not available yet" 
               class="hover:opacity-50">
               GitHub
-            </a>
-            <p class="text-[#F2B14B]">|</p>
-            <a v-if="process" 
+            </a> -->
+            <p v-if="gitHub || liveSite" class="text-[#F2B14B]">|</p>
+            <!-- <a v-if="process" 
               data-twe-toggle="tooltip" 
               data-twe-ripple-init 
               data-twe-placement="bottom"  
@@ -87,7 +87,8 @@
               title="Not available yet" 
               class="hover:opacity-50">
               Process
-            </a>
+            </a> -->
+            <router-link :to="{ name: 'process', params: { project: name }}">Process</router-link>
           </div>
           <div v-if="index % 2 === 1" class="hidden lg:block lg:-bottom-10 lg:-right-5 lg:absolute lg:-rotate-12">
             <p class="inline-block pr-2 text-[#F2B14B]">Check out</p><Undo class="transform -rotate-[245deg] inline-block" color="#F2B14B"/>
@@ -104,13 +105,15 @@
           <p class="font-bold">Made with</p>
           <div class="flex flex-wrap gap-2">
             <div v-for="technology in technologies" class="p-3 text-center">
-              <i :class=technology.imgTag class="md:text-3xl text-2xl"> </i>
+              <i v-if="technology.imgTag" :class=technology.imgTag class="md:text-3xl text-2xl"> </i>
+              <i v-else class="md:text-3xl text-2xl text-center"><Frame size="30" class="my-1 mx-auto"/></i>
               <p>{{ technology.name }}</p>
             </div>
           </div>
         </div>
       </div> 
   </div>
+  {{ console.log("techtech", technologies) }}
 </template>
   
 <script>
@@ -141,6 +144,5 @@
           this.zIndex = isHovered ? -1 : 1;
         }
     }
-    };
-    console.log(name)
+  };
 </script>

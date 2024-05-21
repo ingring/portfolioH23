@@ -17,9 +17,25 @@ module.exports = {
       'yellow': '#F2C94C',
       'red': '#F2994A',
       'yellowShadow': '#F2C94C',
+      'orange': '#F2B14B',
+      // 'progressBlue':'#55868C',
+      // 'progressBlue' : '#0ACDFF',
+      'progressBlue' : '#40E0D0',
+      // 'progressPurple':'#7F636E',
+      //'progressPurple': '#AF90A9',
+      'progressPurple':'#FFDAB9',
+      //'progressGreen':'#88D498',
+      'progressGreen':'#F5DEB3',
+      //'progressRed':'#AFD2E9'
+      'progressRed':'#FF6F61'
       // 'red': '#F2C94C'
     }
   },
-  plugins: [],
+  daisyui: {
+    themes: [],
+  },
+  plugins: [
+    require('daisyui'),
+  ],
 }
 

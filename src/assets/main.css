@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+.mockup-phone .camera:before {
+  background-color: #606060;
+}
+.mockup-phone .camera:after {
+  background-color: #606060;
+}
+
 @layer base {
     h1 {
       @apply text-7xl;
