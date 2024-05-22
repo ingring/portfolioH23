@@ -1,7 +1,6 @@
 <script setup>
 import HeroSection from '../components/HeroSection.vue'
 import Projects from '../components/Projects.vue'
-import FooterComp from '../components/FooterComp.vue'
 import Smiley from '../components/Smiley.vue'
 import AboutMe from '../components/AboutMe.vue'
 import Nav from '../components/Nav.vue'
@@ -27,7 +26,6 @@ import { onMounted } from "vue";
     <Projects />
     <Timeline />
 
-    <RouterLink to="/test">Hei</RouterLink>
   </main>
 
 </template>
