@@ -101,7 +101,7 @@
               class="hover:opacity-50">
               Process
             </a> -->
-            <RouterLink :to="{ name: 'process', params: { project: name }}">Process</RouterLink>
+            <RouterLink :to="{ name: 'process', params: { project: name}}">Process</RouterLink>
           </div>
           <div v-if="index % 2 === 1" class="hidden lg:block lg:-bottom-10 lg:-right-5 lg:absolute lg:-rotate-12">
             <p class="inline-block pr-2 text-[#F2B14B]">Check out</p><Undo class="transform -rotate-[245deg] inline-block" color="#F2B14B"/>

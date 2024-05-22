@@ -25,7 +25,7 @@
         </div>
       </section>
       <div class="md:flex md:gap-20 md:justify-between">
-        <section v-if="gitRepo && this.languages" class="md:w-2/3">
+        <section v-if="gitRepo && this.languages && gitHubUrl" class="md:w-2/3">
           <Progressbar :languageData="this.languages" :gitHubUrl="gitHubUrl" />
         </section>
         <section class="md:min-w-fit md:w-1/3 py-4">
@@ -105,9 +105,11 @@ export default {
         auth: import.meta.env.VITE_GITHUB_API_KEY
         });
 
-        const projectGitRepo = this.gitRepo
+        if (!this.gitRepo) return;
 
         try {
+        const projectGitRepo = this.gitRepo;
+
         const [repoRes, langRes] = await Promise.all([
           octokit.request('GET /repos/{owner}/{repo}', {
             owner: 'ingring',
