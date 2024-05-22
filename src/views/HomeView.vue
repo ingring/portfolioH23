@@ -7,6 +7,8 @@ import AboutMe from '../components/AboutMe.vue'
 import Nav from '../components/Nav.vue'
 import Timeline from '../components/Timeline.vue'
 
+import { RouterLink, RouterView } from 'vue-router'
+
 import { onMounted } from "vue";
   import { Tooltip, initTWE } from "tw-elements";
 
@@ -24,8 +26,11 @@ import { onMounted } from "vue";
   <main class="relative mx-auto max-w-2xl lg:max-w-7xl px-10 md:px-20 py-5">
     <Projects />
     <Timeline />
+
+    <RouterLink to="/test">Hei</RouterLink>
   </main>
   <FooterComp />
+
 </template>
 
 <script>
