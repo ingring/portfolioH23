@@ -66,28 +66,28 @@
 <script>
 // Octokit.js
 // https://github.com/octokit/core.js#readme
-import { Octokit} from "octokit"
+import { Octokit } from "octokit"
 import { builder } from '@/main'
 import Progressbar from '../Process/Progressbar.vue'
 
 export default {
-    components: {
-      Progressbar,
-    },
-    props: {
-      devProcess: Object,
-      gitRepo: String,
-      gitHubUrl: String,
-      liveSiteUrl: String
-    },
-    data() {
-        return {
-        repo: {},
-        languages: {},
-        originalDate: new Date(),
-        };
-    },
-    methods: {
+  components: {
+    Progressbar,
+  },
+  props: {
+    devProcess: Object,
+    gitRepo: String,
+    gitHubUrl: String,
+    liveSiteUrl: String,
+  },
+  data() {
+    return {
+      repo: {},
+      languages: {}, 
+      originalDate: new Date(),
+    };
+  },
+  methods: {
     formattedDate(date) {
       date = new Date (date);
       return date.toLocaleDateString('en-US', {
@@ -97,16 +97,16 @@ export default {
       });
     },
     urlFor(source) {
-            return builder.image(source);
+      return builder.image(source);
     },
-    async fetchGitStuff(){
-        const octokit = new Octokit({
+    async fetchGitStuff() {
+      const octokit = new Octokit({
         auth: import.meta.env.VITE_GITHUB_API_KEY
-        });
+      });
 
-        if (!this.gitRepo) return;
+      if (!this.gitRepo) return;
 
-        try {
+      try {
         const projectGitRepo = this.gitRepo;
 
         const [repoRes, langRes] = await Promise.all([
@@ -129,17 +129,16 @@ export default {
         ]);
         this.repo = repoRes.data;
         this.languages = langRes.data;
-        } catch (error) {
+      } catch (error) {
         console.error('Error:', error);
-        }
+      }
     }
   },
   watch: {
-    project: {
+    gitRepo: {
       handler: 'fetchGitStuff', // Method to call when project changes
       immediate: true // Fetch data immediately when component is created
     }
-}, 
+  }
 };
-
 </script>
