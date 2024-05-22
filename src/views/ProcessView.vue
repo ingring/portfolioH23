@@ -65,6 +65,29 @@ export default {
       this.loading = false; 
     }
   },
+
+  watch: {
+    project: {
+      handler: 'fetchProjectData', // Method to call when project changes
+      immediate: true // Fetch data immediately when component is created
+    }
+  },
+  methods: {
+    async fetchProjectData() {
+      this.loading = true; // Set loading to true before fetching data
+      try {
+        const data = await this.$sanityClient.fetch('*[_type == "project" && isFavorite == true && name == $project][0]', { project: this.project });
+        console.log('Fetched data:', data);
+        this.projectData = data;
+        this.error = null; // Clear any previous errors
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        this.error = error.message;
+      } finally {
+        this.loading = false; // Set loading to false after data fetching is done
+      }
+    }
+  }
 };
 
 </script>
