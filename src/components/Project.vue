@@ -1,5 +1,6 @@
 <script setup>
   import { Undo, Frame } from 'lucide-vue-next';
+  import { RouterLink } from 'vue-router'
 
 /*   import { onMounted } from "vue";
     import { Ripple, Tooltip, initTWE } from "tw-elements";
@@ -100,7 +101,7 @@
               class="hover:opacity-50">
               Process
             </a> -->
-            <router-link :to="{ name: 'process', params: { project: name }}">Process</router-link>
+            <RouterLink :to="{ name: 'process', params: { project: name }}">Process</RouterLink>
           </div>
           <div v-if="index % 2 === 1" class="hidden lg:block lg:-bottom-10 lg:-right-5 lg:absolute lg:-rotate-12">
             <p class="inline-block pr-2 text-[#F2B14B]">Check out</p><Undo class="transform -rotate-[245deg] inline-block" color="#F2B14B"/>
