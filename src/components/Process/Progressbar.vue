@@ -53,10 +53,10 @@
         return percentages;
       },
       bgColors() {
-        return ["bg-orange", "bg-progressGreen", "bg-progressRed", "bg-progressBlue", "bg-progressPurple", "bg-progressRed"];
+        return ["bg-orange", "bg-progressGreen", "bg-progressRed", "bg-progressBlue", "bg-progressPurple"];
       },
       textColors() {
-        return ["text-orange", "text-progressGreen", "text-progressRed", "text-progressBlue", "text-progressPurple", "text-progressGreen", "text-progressRed"];
+        return ["text-orange", "text-progressGreen", "text-progressRed", "text-progressBlue", "text-progressPurple"];
       },
     },
   };

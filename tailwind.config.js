@@ -23,7 +23,7 @@ module.exports = {
       'progressBlue' : '#40E0D0',
       // 'progressPurple':'#7F636E',
       //'progressPurple': '#AF90A9',
-      'progressPurple':'#FFDAB9',
+      'progressPurple':'#88D498',
       //'progressGreen':'#88D498',
       'progressGreen':'#F5DEB3',
       //'progressRed':'#AFD2E9'
