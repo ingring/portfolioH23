@@ -98,9 +98,8 @@ export default {
     },
     urlFor(source) {
             return builder.image(source);
-        },
-  },
-  async created() {
+    },
+    async fetchGitStuff(){
         const octokit = new Octokit({
         auth: import.meta.env.VITE_GITHUB_API_KEY
         });
@@ -134,6 +133,13 @@ export default {
         console.error('Error:', error);
         }
     }
+  },
+  watch: {
+    project: {
+      handler: 'fetchGitStuff', // Method to call when project changes
+      immediate: true // Fetch data immediately when component is created
+    }
+}, 
 };
 
 </script>

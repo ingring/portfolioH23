@@ -29,7 +29,6 @@ import { onMounted } from "vue";
 
     <RouterLink to="/test">Hei</RouterLink>
   </main>
-  <FooterComp />
 
 </template>
 
@@ -38,7 +37,6 @@ import { onMounted } from "vue";
     components: {
       HeroSection,
       Projects,
-      FooterComp,
       Smiley,
       AboutMe,
       Nav,

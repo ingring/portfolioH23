@@ -24,7 +24,6 @@ defineProps({
       <Result :responsive="projectData?.process?.responsiveDesign" :result="projectData?.process?.result" :projectName="projectData?.name" />
     </div>
   </main>
-  <FooterComp />
   
 </template>
 
@@ -38,7 +37,6 @@ import About from '../components/Process/About.vue';
 
 export default {
   components: {
-    FooterComp,
     GoBackBtn,
     Development,
     Design,

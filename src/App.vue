@@ -2,6 +2,7 @@
 import { RouterLink, RouterView } from 'vue-router'
 import { onMounted } from "vue";
 import { Tooltip, Ripple, initTWE } from "tw-elements";
+import FooterComp from './components/FooterComp.vue';
 </script>
 
 <template>
@@ -16,7 +17,7 @@ import { Tooltip, Ripple, initTWE } from "tw-elements";
       </nav>
     </div>
   </header> -->
-  
+
   <RouterView />
   <FooterComp />
 

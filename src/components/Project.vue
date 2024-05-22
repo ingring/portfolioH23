@@ -126,7 +126,6 @@
         </div>
       </div> 
   </div>
-  {{ console.log("techtech", technologies) }}
 </template>
   
 <script>

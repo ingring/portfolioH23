@@ -37,9 +37,7 @@
     },
     mounted() {
       this.$sanityClient.fetch('*[_type == "project" && isFavorite == true] | order(_updatedAt desc) {name, description, "imgUrlMockupPhone":mockupPhone.asset._ref, "imgUrlMockupDesktop":mockupDesktop.asset._ref, "technologies":technology[]->{name, "img":img.asset._ref, "imgTag":description[0].children[0].text}, gitProjectUrl, liveWebsiteUrl}').then((data) => {
-        console.log(data)
         this.projects = data;
-        console.log("hei", this.projects[1])
       });
     },
   };
