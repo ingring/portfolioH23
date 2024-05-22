@@ -17,7 +17,7 @@ defineProps({
       Loading...
     </div>
     <div v-else>
-      <h1 class="pt-8" v-if="this.project">{{ this.project }}</h1>
+      <h1 class="pt-8" v-if="projectData.name">{{ projectData.name }}</h1>
       <About :about="projectData?.process?.about" />
       <Design :protoSrc="projectData?.process?.figmaProtoSrc" :designProcess="projectData?.process?.designProcess" />
       <Development :devProcess="projectData?.process?.devProcess" :gitRepo="projectData?.process?.languageProgressbarRepoName" :gitHubUrl="projectData?.gitProjectUrl" :liveSiteUrl="projectData?.liveWebsiteUrl"/>
@@ -45,22 +45,26 @@ export default {
   },
   data() {
       return {
-        projectData: [],
+        projectData: null,
         loading: true,
         error: null, 
       };
   },
   async created() {
+    if (!this.$sanityClient || !this.project) {
+      return;
+    }
+    
     try {
-      this.$sanityClient.fetch('*[_type == "project" && isFavorite == true && name == $project][0]', { project: this.project }).then((data) => {
-        console.log('Created', data)
-        this.projectData = data;
-      });
+      const data = await this.$sanityClient.fetch('*[_type == "project" && isFavorite == true && name == $project][0]', { project: this.project });
+      console.log('CREATED DATA:', data);
+      this.projectData = data;
+      this.error = null; // Clear any previous errors
     } catch (error) {
       console.error('Error fetching data:', error);
       this.error = error.message;
     } finally {
-      this.loading = false; 
+      this.loading = false; // Set loading to false after data fetching is done
     }
   },
 
@@ -71,11 +75,15 @@ export default {
     }
   },
   methods: {
-    async fetchProjectData() {
+    async fetchProjectData(newProject, oldProject) {
+      if (!this.$sanityClient || !newProject) {
+        return;
+      }
+      
       this.loading = true; // Set loading to true before fetching data
       try {
-        const data = await this.$sanityClient.fetch('*[_type == "project" && isFavorite == true && name == $project][0]', { project: this.project });
-        console.log('Fetched data:', data);
+        const data = await this.$sanityClient.fetch('*[_type == "project" && isFavorite == true && name == $project][0]', { project: newProject });
+        console.log('FETCHED DATA:', data);
         this.projectData = data;
         this.error = null; // Clear any previous errors
       } catch (error) {
