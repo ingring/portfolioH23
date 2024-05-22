@@ -2,7 +2,7 @@
   import { ExternalLink } from 'lucide-vue-next';
 </script>
 <template>
-    <h3 class="py-4">Program languages</h3>
+    <h3 v-if="languageData || gitHubUrl" class="py-4">Program languages</h3>
     <div class="w-full rounded-lg overflow-hidden">
       <div class="flex h-4">
         <div
