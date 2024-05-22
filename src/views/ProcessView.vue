@@ -57,7 +57,7 @@ export default {
     
     try {
       const data = await this.$sanityClient.fetch('*[_type == "project" && isFavorite == true && name == $project][0]', { project: this.project });
-      console.log('CREATED DATA:', data);
+      console.log('CREATED DATA CREATE:', data);
       this.projectData = data;
       this.error = null; // Clear any previous errors
     } catch (error) {
@@ -83,7 +83,7 @@ export default {
       this.loading = true; // Set loading to true before fetching data
       try {
         const data = await this.$sanityClient.fetch('*[_type == "project" && isFavorite == true && name == $project][0]', { project: newProject });
-        console.log('FETCHED DATA:', data);
+        console.log('FETCHED DATA FETCH:', data);
         this.projectData = data;
         this.error = null; // Clear any previous errors
       } catch (error) {
