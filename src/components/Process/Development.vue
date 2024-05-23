@@ -15,18 +15,18 @@
       <Progressbar :languageData="languages" />
     </div> -->
 
-    <section class="py-4" v-if="gitRepo || this.languages || devProcess">
+    <section class="py-4" v-if="gitRepo || languages || devProcess">
       <h2>Development</h2>
-      <section v-if="devProcess" class="py-4 max-w-prose">
-        <div v-for="dev in devProcess" :key="dev._key" class="">
+      <section v-if="devProcess">
+        <div v-for="dev in devProcess" :key="dev._key" class="py-4">
           <h3 v-if="dev.title">{{ dev.title }}</h3>
-          <p v-if="dev.description">{{ dev.description }}</p>
+          <p v-if="dev.description" class="my-4 max-w-prose">{{ dev.description }}</p>
           <img v-if="dev.image" :src="urlFor(dev.image.asset).url()" />
         </div>
       </section>
       <div class="md:flex md:gap-20 md:justify-between">
         <section v-if="gitRepo && languages && gitHubUrl" class="md:w-2/3">
-          <Progressbar :languageData="this.languages" :gitHubUrl="gitHubUrl" />
+          <Progressbar :languageData="languages" :gitHubUrl="gitHubUrl" />
         </section>
         <section class="md:min-w-fit md:w-1/3 py-4">
           <h3>Check out</h3>

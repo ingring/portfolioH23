@@ -4,11 +4,11 @@ import { Smartphone, Laptop } from 'lucide-vue-next';
 <template>
     <section class="py-4" v-if="designProcess || protoSrc">
         <h2>Design</h2>
-        <section v-if="designProcess" class="py-4 max-w-prose">
-            <div v-for="design in designProcess" :key="design._key" class="">
+        <section v-if="designProcess">
+            <div v-for="design in designProcess" :key="design._key" class="py-4">
                 <h3 v-if="design.title">{{ design.title }}</h3>
-                <p v-if="design.description" class="py-4">{{ design.description }}</p>
-                <img v-if="design.image" :src="urlFor(design.image.asset).url()" />
+                <p v-if="design.description" class="my-4 max-w-prose">{{ design.description }}</p>
+                <img v-if="design.image" :src="urlFor(design.image.asset).url()" class="mt-4" />
             </div>
         </section>
         <section v-if="protoSrc" class="py-4">
